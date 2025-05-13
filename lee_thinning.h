@@ -1,7 +1,3 @@
-//void rsf3d(float* phi, float* image, float* Force, float* Regularization, float* Smoothness, float* Band, unsigned long sx, unsigned long sy, unsigned long sz, float sigma_r, float sigma_F, float epsilon);
-
-
-
 
 #include <tira/volume.h>
 #include <vector>
@@ -164,8 +160,8 @@ void set_pixel(Volume& vol, int x, int y, int z, int value) {
 
 
 
-//Creates a LUT that maps integers 0ñ255 to their number of 1-bits (i.e., how many neighbors are on). 
-// This isnít always used, but it helps quickly evaluate connectivity degree.
+//Creates a LUT that maps integers 0‚Äì255 to their number of 1-bits (i.e., how many neighbors are on). 
+// This isn‚Äôt always used, but it helps quickly evaluate connectivity degree.
 //Fill number of points in octant LUT
 void fill_num_of_points_LUT(std::array<int, 256>& LUT) {
     for (int i = 0; i < 256; ++i) {
@@ -514,10 +510,10 @@ void octree_labeling(int octant, int label, std::array<int, 26>& cube) {
 }
 
 
-//Determines whether a voxel is ìsimpleî which means., its removal doesnít break connectivity. 
+//Determines whether a voxel is ‚Äúsimple‚Äù which means., its removal doesn‚Äôt break connectivity. 
 // It copies the 26-neighborhood (skipping center), performs labeling via octree_labeling, 
 // and checks if only one connected component exists. 
-// If multiple are found, itís not simple.
+// If multiple are found, it‚Äôs not simple.
 /**
      * Check if current point is a Simple Point.
      * This method is named 'N(v)_labeling' in [Lee94].
