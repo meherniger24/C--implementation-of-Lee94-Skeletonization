@@ -1,3 +1,7 @@
+/*
+__author__    = 'Meher Niger <mniger@uh.edu>'
+__copyright__ = 'Copyright 2025 by Meher Niger'
+*/
 
 #include <tira/volume.h>
 #include <vector>
